@@ -1,0 +1,22 @@
+{
+  "name": "boilerplate-sv_parcel-npm",
+  "version": "1.0.0",
+  "description": "Mitt boilerplate projekt med parcel npm svenska inställningar",
+  "main": "scripts/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarasjodin/boilerplate-sv_parcel-npm.git"
+  },
+  "author": "Sara Sjodin Scolari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarasjodin/boilerplate-sv_parcel-npm/issues"
+  },
+  "homepage": "https://github.com/sarasjodin/boilerplate-sv_parcel-npm#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3"
+  }
+}
