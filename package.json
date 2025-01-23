@@ -2,9 +2,10 @@
   "name": "boilerplate-sv_parcel-npm",
   "version": "1.0.0",
   "description": "Mitt boilerplate projekt med parcel npm svenska inställningar",
-  "main": "scripts/index.js",
+  "source": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel",
+    "build": "parcel build"
   },
   "repository": {
     "type": "git",
