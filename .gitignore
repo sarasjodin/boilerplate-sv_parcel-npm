@@ -1,0 +1,21 @@
+# Ignorera node_modules-katalogen
+node_modules/
+
+# Ignorera byggfiler och cache
+dist/
+.cache/
+
+# Andra tillfälliga filer
+*.log/
+
+# Miljöfiler
+.env
+# som t.ex.:
+# .env.local
+# .env.production
+# .env.test
+
+# Konfigureringsfiler med känsliga data
+# som t.ex.:
+# config/*.json
+# secrets/*.key
