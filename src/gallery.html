@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/nav.css" />
+    <link rel="stylesheet" href="styles/gallery.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <!--<link rel="stylesheet" href="styles/gallery.css.scss" />-->
+    <script src="scripts/gallery.js" type="module"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="menu">
+        <div class="logo-container">
+          <img src="images/logo-01.svg" alt="Company Logo" class="logo" />
+          <span class="company-name">CompanyName</span>
+        </div>
+        <button class="hamburger-menu" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav">
+          <ul class="menu-items">
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="#">Galleri</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li class="dropdown">
+              <a href="#products"> <span class="arrow"></span> Produkter </a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Produkt 1</a></li>
+                <li><a href="#">Produkt 2</a></li>
+                <li><a href="#">Produkt 3</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="gallery">
+        <div class="gallery-item item-1">
+          <img src="https://picsum.photos/300/200?random=1" alt="Photo 1" />
+        </div>
+        <div class="gallery-item item-2">
+          <img src="https://picsum.photos/300/200?random=2" alt="Photo 2" />
+        </div>
+        <div class="gallery-item item-3">
+          <img src="https://picsum.photos/300/200?random=3" alt="Photo 3" />
+        </div>
+        <div class="gallery-item item-4">
+          <img src="https://picsum.photos/300/200?random=4" alt="Photo 4" />
+        </div>
+        <div class="gallery-item item-5">
+          <img src="https://picsum.photos/300/200?random=5" alt="Photo 5" />
+        </div>
+        <div class="gallery-item item-6">
+          <img src="https://picsum.photos/300/200?random=6" alt="Photo 6" />
+        </div>
+        <div class="gallery-item item-7">
+          <img src="https://picsum.photos/300/200?random=7" alt="Photo 7" />
+        </div>
+        <div class="gallery-item item-8">
+          <img src="https://picsum.photos/300/200?random=8" alt="Photo 8" />
+        </div>
+        <div class="gallery-item item-9">
+          <img src="https://picsum.photos/300/200?random=9" alt="Photo 9" />
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal">
+        <div class="modal-content">
+          <img
+            src="https://picsum.photos/300/200?random=9"
+            alt="Enlarged Photo"
+            class="modal-image"
+          />
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer-section">
+          <h3>Företag</h3>
+          <p>Om oss</p>
+          <p>Vår historia</p>
+          <p>Jobb</p>
+        </div>
+        <div class="footer-section">
+          <h3>Vårt kontor</h3>
+          <p>Adress: Exempelgatan 123</p>
+          <p>Telefon: 0123-456789</p>
+          <p>Email: info@example.com</p>
+        </div>
+        <div class="footer-section">
+          <h3>Våra riktlinjer</h3>
+          <p>Integritet</p>
+          <p>Cookies</p>
+          <p>Villkor</p>
+        </div>
+        <div class="footer-section">
+          <h3>Navigering</h3>
+          <p>Start</p>
+          <p>Produkter</p>
+          <p>Kontakt</p>
+        </div>
+        <div class="footer-section social-media">
+          <h3>Följ oss</h3>
+          <div class="social-icons">
+            <img src="images/facebook.svg" alt="Facebook" />
+            <img src="images/x.svg" alt="X" />
+            <img src="images/instagram.svg" alt="Instagram" />
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="scripts/gallery.js"></script>
+  </body>
+</html>
