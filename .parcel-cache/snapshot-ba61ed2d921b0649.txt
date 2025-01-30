@@ -59,7 +59,7 @@
 100C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\semver\functions\neq.js133821410533319671 0
 122C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\@parcel\reporter-tracer\lib\TracerReporter.js133821410529120437 0
 108C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\caniuse-lite\data\regions\KN.js133821410539971520 0
-68C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\dist133823868472152193 1
+68C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\dist133823888550614608 1
 108C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\posthtml-parser\dist\index.d.ts133821410530774184 0
 85C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\src\styles\footer.css133823855590744656 0
 95C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\utility-types\dist133821410532744894 1
@@ -124,7 +124,7 @@
 109C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\@parcel\profiler\lib\Tracer.d.ts133821410532569283 0
 78C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\src\index.html133823855589715598 0
 137C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\msgpackr-extract\node_modules\detect-libc\lib\detect-libc.js133821410529198680 0
-80C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\src\process.html133821395186878215 0
+80C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\src\process.html133823878537710400 0
 140C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\@parcel\package-manager\test\fixtures\packages\foo-2.0\index.js133821410532189643 0
 106C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\json-parse-even-better-errors133821410530356288 1
 75C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\src\scripts133823524150685936 1
@@ -168,7 +168,7 @@
 139C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\@parcel\package-manager\test\fixtures\has-foo\node_modules\foo133821410533580030 1
 106C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\weak-lru-cache\LRFUExpirer.js133821410530276325 0
 94C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\lmdb\util\when.js133821410535729203 0
-82C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\src\styles\nav.css133823726610928539 0
+82C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\src\styles\nav.css133823888550434807 0
 121C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\caniuse-lite\data\features\pointer-events.js133821410541276184 0
 123C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\@swc\helpers\_\_iterable_to_array\package.json133821410537086035 0
 106C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\domutils\lib\esm\helpers.d.ts133821410534252966 0
@@ -919,7 +919,7 @@
 121C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\@parcel\watcher\src\macos\FSEventsBackend.hh133821410533319671 0
 98C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\@parcel\rust\index.js133821410530256032 0
 121C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\node-gyp-build-optional-packages\optional.js133821410530439711 0
-87C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\dist\index.1f7b75a3.css133823868470947313 0
+87C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\dist\index.1f7b75a3.css133823888550591767 0
 93C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\timsort\index.js133821410530096337 0
 95C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\timsort\LICENSE.md133821410530439711 0
 97C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\node_modules\@parcel\profiler\src133821410532032376 1
@@ -4261,7 +4261,7 @@
 93C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\dist\gallery.1b7dcca3.css.map133823868470916480 0
 88C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\dist\gallery.ed209c43.js133823868469803739 0
 90C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\dist\index.0fbc91cd.js.map133823868470332273 0
-91C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\dist\index.1f7b75a3.css.map133823868470971432 0
+91C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\dist\index.1f7b75a3.css.map133823888550614608 0
 87C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\dist\index.5525e4b8.css133823868469738454 0
 91C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\dist\index.5525e4b8.css.map133823868469932909 0
 87C:\Users\saras\Documents\VSCworkspace\boilerplate-sv_parcel-npm\dist\index.b08323ff.css133823868471783612 0

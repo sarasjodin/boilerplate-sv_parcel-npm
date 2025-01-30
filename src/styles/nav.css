@@ -78,9 +78,10 @@ body {
   color: white;
   font-size: 16px;
   padding: 5% 10%;
-  display: block;
+  display: inline-flex;
   border-radius: 3px;
   transition: background-color 0.3s;
+  width: calc(100% + 30%);
 }
 
 .menu-items a:hover {
@@ -114,21 +115,18 @@ body {
   display: block; /* För desktop */
 }
 
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
 .menu-items li.dropdown > a .arrow {
   display: inline-block;
   content: "";
-  width: 0;
-  height: 0;
-  margin-right: 6px; /* Avstånd mellan pil och text */
+  /* width: 0;
+  height: 0; */
+  margin-right: 8px; /* Avstånd mellan pil och text */
   border-style: solid;
-  border-width: 6px 4px 6px 6px; /* Triangelform */
+  border: 6px solid #ffffff;
   border-color: transparent transparent transparent white; /* Pilar pekar åt höger */
   transform: rotate(0deg); /* Standard, pekar åt höger */
   transition: transform 0.3s ease; /* Mjuk övergång vid öppning/stängning */
+  z-index: 1000;
 }
 
 /* När dropdownmenyn är aktiv, peka pilen nedåt */
