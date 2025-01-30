@@ -81,11 +81,15 @@ body {
   display: inline-flex;
   border-radius: 3px;
   transition: background-color 0.3s;
-  width: calc(100% + 30%);
+  width: calc(100% + 40%);
 }
 
 .menu-items a:hover {
   background-color: #555;
+}
+
+ul.dropdown-menu.active {
+  width: 150%;
 }
 
 /* För att dropdownmenyn ska visas som en undermeny */

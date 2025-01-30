@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/process.css" />
     <link rel="stylesheet" href="styles/nav.css" />
     <link rel="stylesheet" href="styles/footer.css" />
     <!--<link rel="stylesheet" href="styles/main.scss" />-->
@@ -50,7 +51,8 @@
           </p>
           <ul>
             <li>
-              HTML-struktur (t.ex. en basmall med &lt;head&gt; och &lt;body&gt;)
+              HTML-struktur (t.ex. en basmall med <code>&lt;head&gt;</code> och
+              <code>&lt;body&gt;</code>)
             </li>
             <li>
               CSS-reset eller grundläggande stilar (t.ex. Normalizer eller en
@@ -99,78 +101,157 @@
             Jag hade tidigare aldrig hört talas om html5boilerplate, så det blir
             till att testa!
           </p>
-          <h1>Arbetsprocess och automatisering</h1>
-          <h2>Filstruktur</h2>
+          <h2>Arbetsprocess och automatisering</h2>
+          <h3>Filstruktur</h3>
           <pre>
             <code>
-            boilerplate-sv_parcel-npm
-                ├── .parcel-cache
-                ├── dist
-                ├── node_modules
-                ├── src
-                │   ├── dist
-                │   ├── images
-                │   ├── scripts
-                │   ├── styles
-                │   ├── videos
-                │   ├── gallery.html
-                │   ├── index.html
-                │   ├── process.html
-                │   ├── .env
-                │   ├── .env.example
-                │   ├── .gitignore
-                │   ├── package-lock.json
-                │   ├── package.json
-                │   ├── readme.md
+              📂boilerplate-sv_parcel-npm
+                ├── 📂.parcel-cache (tillagd i .gitignore)
+                ├── 📂dist (tillagd i .gitignore)
+                ├── 📂node_modules (tillagd i .gitignore)
+                ├── 📂src
+                │   ├── 📂images
+                │   ├── 📂scripts
+                │   ├── 📂styles
+                │   ├── 📂videos
+                │   ├── 📜gallery.html
+                │   ├── 📜index.html
+                │   ├── 📜process.html
+                │   ├── 🔑.env (tillagd i .gitignore)
+                │   ├── 🔑.env.example
+                │   ├── 🗒.gitignore
+                │   ├── 🔄package-lock.json
+                │   ├── 🔄package.json
+                │   ├── 📄readme.md
             </code>
             </pre>
-          <h2>Versionshantering</h2>
+          <h3>Versionshantering</h3>
           <p>
             För att säkerställa en organiserad utvecklingsprocess används Git
             och GitHub för versionshantering enligt bästa praxis.
           </p>
-          <h2>Git-struktur</h2>
+          <h3>Git-struktur</h3>
           <ul>
             <li>
-              <strong> Main branch</strong> – Den stabila produktionsversionen
-              av webbplatsen.
+              <strong> Main branch</strong> Den stabila produktionsversionen av
+              webbplatsen.
             </li>
             <li>
-              <strong>Dev branch</strong> – Här sker aktiv utveckling innan
+              <strong>Dev branch</strong> Här sker aktiv utveckling innan
               förändringar slås samman till main.
             </li>
             <li>
-              <strong>Feature branches</strong> – För specifika funktioner,
+              <strong>Feature branches</strong> För specifika funktioner,
               exempelvis feature-image-optimization.
             </li>
           </ul>
-          <h2>Arbetsflöde</h2>
+          <h3>Arbetsflöde</h3>
           <ol>
-            <li><strong>Klona repot</strong> git clone &lt;repo-url&gt;</li>
             <li>
-              <strong>Skapa en ny branch</strong> git checkout -b
-              feature-newpage
+              <strong>Klona repot</strong>
+              <ul>
+                <li><code>git clone &lt;repo-url&gt;</code></li>
+                <li><code>cd &lt;repo-namn&gt;</code></li>
+              </ul>
             </li>
+
+            <li>
+              <strong>Skapa en ny branch</strong>
+              <ul>
+                <li><code>git checkout -b feature-newpage</code></li>
+              </ul>
+            </li>
+
             <li>
               <strong>Arbeta och göra commits</strong>
-              git add . git commit -m "Lagt till ny undersida för
-              processbeskrivning"
+              <ul>
+                <li><code>git add .</code></li>
+                <li>
+                  <code
+                    >git commit -m "Lagt till ny undersida för
+                    processbeskrivning"</code
+                  >
+                </li>
+              </ul>
             </li>
+
             <li>
-              <strong>Pusha förändringar</strong> git push origin
-              feature-newpage
+              <strong>Pusha förändringar</strong>
+              <ul>
+                <li><code>git push origin feature-newpage</code></li>
+              </ul>
             </li>
+
             <li>
-              Skapa en pull request (PR) och granska innan merge till dev.
+              <strong
+                >Skapa en pull request (PR) och granska innan merge till
+                dev</strong
+              >
+              <p>Skapa en PR via terminalen (GitHub CLI krävs):</p>
+              <ul>
+                <li>
+                  <code
+                    >gh pr create --base dev --head feature-newpage --title
+                    "Lagt till ny undersida" --body "Denna PR lägger till en ny
+                    undersida."</code
+                  >
+                </li>
+              </ul>
             </li>
+
             <li>
-              När utvecklingen är stabil, slå samman dev till main och publicera
-              automatiskt.
+              <strong
+                >När utvecklingen är stabil, slå samman dev till main och
+                publicera automatiskt</strong
+              >
+              <p>Hämta senaste ändringar från main:</p>
+              <ul>
+                <li><code>git checkout main && git pull origin main</code></li>
+              </ul>
+              <p>Slå samman dev → main:</p>
+              <ul>
+                <li>
+                  <code
+                    >git merge dev --no-ff -m "Slår samman dev till main efter
+                    godkänd PR"</code
+                  >
+                </li>
+              </ul>
+
+              <p>Pusha till main:</p>
+              <ul>
+                <li><code>git push origin main</code></li>
+              </ul>
+              <p>
+                En <code>.gitignore</code>-fil används för att exkludera filer
+                som <code>node_modules/</code>, <code>dist/</code>, och andra
+                byggfiler från versionshanteringen.
+              </p>
             </li>
+
             <li>
-              En <code>.gitignore</code>-fil används för att exkludera filer som
-              node_modules/, dist/, och andra byggfiler från
-              versionshanteringen.
+              <strong>Kör bygg- och deploy-process efter merge</strong>
+              <p>Hämta senaste ändringar i main:</p>
+              <ul>
+                <li><code>git pull origin main</code></li>
+              </ul>
+              <p>Installera beroenden om nödvändigt:</p>
+              <ul>
+                <li><code>npm install</code></li>
+              </ul>
+              <p>Bygg projektet:</p>
+              <ul>
+                <li><code>npm run build</code></li>
+              </ul>
+              <p>Deploya till GitHub Pages:</p>
+              <ul>
+                <li><code>npx gh-pages -d dist</code></li>
+              </ul>
+              <p>För Netlify/Vercel:</p>
+              <ul>
+                <li><code>netlify deploy --prod</code></li>
+                <li><code>vercel --prod</code></li>
+              </ul>
             </li>
           </ol>
           <h2>Automatisering med Parcel</h2>
@@ -203,10 +284,10 @@
           </p>
           <ul>
             <li>Parcel konfigurerar automatiskt Babel.</li>
-            <li><strong>Kommando</strong> npm run build</li>
+            <li><strong>Kommando</strong> <code>npm run build</code></li>
             <li>
-              <strong>Utdata</strong> JavaScript-filer i dist/-mappen,
-              optimerade och ES5-kompatibla.
+              <strong>Utdata</strong> JavaScript-filer i
+              <code>dist/</code>-mappen, optimerade och ES5-kompatibla.
             </li>
             <li>
               <strong>Fördelar</strong> Bakåtkompatibilitet och
@@ -217,7 +298,10 @@
           <p>HTML-filer optimeras för att reducera storlek.</p>
           <ul>
             <li><strong>Kommando</strong> <code>npm run build</code></li>
-            <li><strong>Utdata</strong> Komprimerade HTML-filer i dist/.</li>
+            <li>
+              <strong>Utdata</strong> Komprimerade HTML-filer i
+              <code>dist/</code>.
+            </li>
             <li>
               <strong>Fördelar</strong> Snabbare laddning och mindre
               bandbreddskonsumtion.
@@ -230,8 +314,11 @@
           </p>
           <ul>
             <li><strong>Tillägg</strong> Paket som imagemin kan användas.</li>
-            <li><strong>Kommando</strong> npm run build</li>
-            <li><strong>Utdata</strong> Optimerade bilder i dist/images/.</li>
+            <li><strong>Kommando</strong> <code>npm run build</code></li>
+            <li>
+              <strong>Utdata</strong> Optimerade bilder i
+              <code>dist/images/</code>.
+            </li>
             <li>
               <strong>Fördelar</strong> Minskad filstorlek, snabbare laddning.
             </li>
@@ -261,11 +348,84 @@
           </h2>
           <p>
             Vid byggprocessen kopieras alla optimerade filer till en
-            <code>dist/</code>-mappp för publicering.
+            <code>dist/</code>-mapp för publicering.
           </p>
           <ul>
             <li><strong>Kommando</strong> <code>npm run build</code></li>
-            <li><strong>Utdata</strong> Publiceringsfärdiga filer i dist/</li>
+            <li>
+              <strong>Utdata</strong> Publiceringsfärdiga filer i
+              <code>dist/</code>
+            </li>
+          </ul>
+          <h2>Kör <code>npm start</code></h2>
+          <p>Startar Parcel i utvecklingsläge.</p>
+          <ul>
+            <li>
+              Laddar filer från <code>src/</code> och har hot-reload
+              (automatiska uppdateringar när du ändrar kod).
+            </li>
+            <li>
+              Använder en inbyggd utvecklingsserver (ofta på 🔓
+              http://localhost:1234/).
+            </li>
+          </ul>
+          <h2>Kör <code>npx serve dist</code></h2>
+          <p>
+            Serverar den byggda versionen från <code>dist/</code>, alltså den
+            optimerade produktionskoden.
+          </p>
+          <ul>
+            <li>
+              Ingen hot-reload – du måste köra
+              <code>npm run build</code> manuellt om du gör ändringar.
+            </li>
+            <li>
+              Använder ofta 🔓 http://localhost:3000/ (beroende på vad serve
+              väljer).
+            </li>
+          </ul>
+          <h2>Nästa steg</h2>
+          <h3>GitHub Actions YAML-fil</h3>
+          <p>
+            Genom att skapa en 📜 YAML-fil
+            <code>.github/workflows/deploy.yml</code>, kan arbetsflödet
+            automatiseras. Detta blir nästa steg i utvecklingen.
+          </p>
+
+          <ul>
+            <li>
+              <strong>Pull Request-jobbet</strong>
+              <ul>
+                <li><code>create_pr</code></li>
+                <li>
+                  När en <code>feature-*</code> branch pushas, skapas en pull
+                  request till <code>dev</code> automatiskt.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>Merge-jobbet</strong>
+              <ul>
+                <li><code>merge_dev_to_main</code></li>
+                <li>
+                  När en PR till <code>dev</code> godkänns, slås
+                  <code>dev</code> automatiskt samman med <code>main</code>.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>Deploy-jobbet</strong>
+              <ul>
+                <li><code>deploy</code></li>
+                <li>
+                  Efter merge till <code>main</code>, installeras beroenden,
+                  bygget körs och webbplatsen publiceras automatiskt (exempelvis
+                  till GitHub Pages).
+                </li>
+              </ul>
+            </li>
           </ul>
         </section>
       </main>
@@ -300,7 +460,11 @@
           <h2>Följ oss</h2>
           <div class="social-icons">
             <div class="social-icon">
-              <a href="https://www.facebook.com" target="_blank">
+              <a
+                href="https://www.facebook.com"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <img src="images/facebook.svg" alt="Facebook" class="normal" />
                 <img
                   src="images/facebook_hover.svg"
@@ -310,7 +474,11 @@
               </a>
             </div>
             <div class="social-icon">
-              <a href="https://www.instagram.com" target="_blank">
+              <a
+                href="https://www.instagram.com"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <img
                   src="images/instagram.svg"
                   alt="Instagram"
@@ -324,13 +492,23 @@
               </a>
             </div>
             <div class="social-icon">
-              <a href="https://x.com/" target="_blank">
+              <a
+                href="https://x.com/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <img src="images/x.svg" alt="X" class="normal" />
                 <img src="images/x_hover.svg" alt="X Hover" class="hover" />
               </a>
             </div>
             <div class="social-icon larger">
-              <a href="https://www.linkedin.com" target="_blank">
+              <a
+                href="https://www.linkedin.com"
+                rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <img src="images/linkedin.svg" alt="LinkedIn" class="normal" />
                 <img
                   src="images/linkedin_hover.svg"
@@ -340,7 +518,11 @@
               </a>
             </div>
             <div class="social-icon largest">
-              <a href="https://www.youtube.com" target="_blank">
+              <a
+                href="https://www.youtube.com"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <img src="images/youtube.svg" alt="YouTube" class="normal" />
                 <img
                   src="images/youtube_hover.svg"
@@ -350,7 +532,11 @@
               </a>
             </div>
             <div class="social-icon larger">
-              <a href="https://www.pinterest.com" target="_blank">
+              <a
+                href="https://www.pinterest.com"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <img
                   src="images/pinterest.svg"
                   alt="Pinterest"
@@ -364,7 +550,11 @@
               </a>
             </div>
             <div class="social-icon larger">
-              <a href="https://www.tiktok.com" target="_blank">
+              <a
+                href="https://www.tiktok.com"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <img src="images/tiktok.svg" alt="TikTok" class="normal" />
                 <img
                   src="images/tiktok_hover.svg"
