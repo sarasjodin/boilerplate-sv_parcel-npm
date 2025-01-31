@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="styles/process.css" />
     <link rel="stylesheet" href="styles/nav.css" />
     <link rel="stylesheet" href="styles/footer.css" />
     <!--<link rel="stylesheet" href="styles/main.scss" />-->
@@ -47,7 +46,7 @@
             En webbplats boilerplate är en färdig kodstruktur som fungerar som
             en startmall för att snabbt bygga en webbplats eller webbaserad
             applikation. Den innehåller ofta grundläggande filer och
-            konfigurationer:
+            konfigurationer
           </p>
           <ul>
             <li>
@@ -95,14 +94,95 @@
               target="_blank"
               >HTML5 Boilerplate</a
             >, som innehåller en optimerad grund för att snabbt starta en
-            modern, responsiv och prestandavänlig webbplats.
+            modern, responsiv och prestandavänlig webbplats. Jag hade tidigare
+            aldrig hört talas om html5boilerplate, så det blir till att testa i
+            nästa steg!
           </p>
-          <p>
-            Jag hade tidigare aldrig hört talas om html5boilerplate, så det blir
-            till att testa!
-          </p>
-          <h2>Arbetsprocess och automatisering</h2>
-          <h3>Filstruktur</h3>
+        </section>
+        <section>
+          <h2>Förberedelser</h2>
+          <ol>
+            <li>
+              Verifiera om Node.js LTS finns installerad på datorn och
+              kontrollera versionen. <br />
+              <ul>
+                <li>
+                  Öppna en kommandoprompt (Terminal, CMD eller PowerShell) och
+                  ange följande kommando <code>node --version</code>
+                </li>
+                <li>
+                  Om Node.js är installerad kommer versionen att visas. Aktuell
+                  version för Node.js LTS januari 2025 är Node.js v23.7.0.
+                </li>
+              </ul>
+            </li>
+            <li>
+              Verifiera vilken Node.js-version som krävs för Parcel genom att
+              besöka
+              <a href="https://parceljs.org/">Parcels officiella webbplats</a>.
+              <ul>
+                <li>Jämför med den version du har installerad.</li>
+                <li>Om din version är för gammal kan du behöva uppgradera.</li>
+                <li>
+                  Om en uppgradering behövs, se till att uppdatera Node.js på
+                  samma sätt som den ursprungligen installerades
+                  <p>
+                    Det vill säga om Node.js installerades manuellt via
+                    <a href="https://nodejs.org/"
+                      >Node.js officiella webbplats</a
+                    >, ladda ner och installera den senaste versionen därifrån.
+                  </p>
+                  <p>
+                    Alterantivt om Node.js installerades via en pakethanterare
+                    som <code>nvm</code> (Node Version Manager), använd nvm för
+                    att uppdatera<br />
+                    <code>nvm install latest</code> (för att installera den
+                    senaste versionen) <br />
+                    <code>nvm use latest</code> (för att använda den senaste
+                    versionen)
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              Kontrollera att npm (Node Package Manager) är installerat, vilket
+              bör sker automatiskt med Node.js.
+              <ul>
+                <li>
+                  Kör följande kommando i terminalen för att verifiera versionen
+                  <code>npm --version</code>
+                </li>
+              </ul>
+            </li>
+            <li>
+              Skapa en ny projektmapp och navigera till den i terminalen<br />
+              <ul>
+                <li><code>mkdir mitt-projekt && cd mitt-projekt</code></li>
+              </ul>
+            </li>
+            <li>
+              Om du inte redan har en boilerplate för projekt, initiera ett nytt
+              Node.js-projekt genom att köra <code>npm init -y</code><br />
+              <p>
+                Detta skapar en <code>package.json</code>-fil, som behövs för
+                att hantera beroenden.
+              </p>
+              <p>
+                Om du redan har en färdig boilerplate, gå vidare till rätt
+                <a href="#arbetsflode">avsnitt i dokumentationen.</a>
+              </p>
+              <pre>
+                <code>
+                  📂 <a href="#arbetsprocess">Arbetsprocess och automatisering</a>
+                    ├── 📂 <a href="#arbetsflode">Arbetsflöde</a>
+                </code>
+              </pre>
+            </li>
+          </ol>
+        </section>
+        <section>
+          <h2 id="arbetsprocess">Arbetsprocess och automatisering</h2>
+          <h3>Min boilerplates filstruktur</h3>
           <pre>
             <code>
               📂boilerplate-sv_parcel-npm
@@ -134,7 +214,7 @@
           <ul>
             <li>
               <strong> Main branch</strong> Den stabila produktionsversionen av
-              webbplatsen.
+              webbplatsen
             </li>
             <li>
               <strong>Dev branch</strong> Här sker aktiv utveckling innan
@@ -145,7 +225,7 @@
               exempelvis feature-image-optimization.
             </li>
           </ul>
-          <h3>Arbetsflöde</h3>
+          <h3 id="arbetsflode">Arbetsflöde</h3>
           <ol>
             <li>
               <strong>Klona repot</strong>
@@ -187,7 +267,7 @@
                 >Skapa en pull request (PR) och granska innan merge till
                 dev</strong
               >
-              <p>Skapa en PR via terminalen (GitHub CLI krävs):</p>
+              <p>Skapa en PR via terminalen (GitHub CLI krävs)</p>
               <ul>
                 <li>
                   <code
@@ -204,11 +284,11 @@
                 >När utvecklingen är stabil, slå samman dev till main och
                 publicera automatiskt</strong
               >
-              <p>Hämta senaste ändringar från main:</p>
+              <p>Hämta senaste ändringar från main</p>
               <ul>
                 <li><code>git checkout main && git pull origin main</code></li>
               </ul>
-              <p>Slå samman dev → main:</p>
+              <p>Slå samman dev till main</p>
               <ul>
                 <li>
                   <code
@@ -218,7 +298,7 @@
                 </li>
               </ul>
 
-              <p>Pusha till main:</p>
+              <p>Pusha till main</p>
               <ul>
                 <li><code>git push origin main</code></li>
               </ul>
@@ -231,36 +311,38 @@
 
             <li>
               <strong>Kör bygg- och deploy-process efter merge</strong>
-              <p>Hämta senaste ändringar i main:</p>
+              <p>Hämta senaste ändringar i main</p>
               <ul>
                 <li><code>git pull origin main</code></li>
               </ul>
-              <p>Installera beroenden om nödvändigt:</p>
+              <p>Installera beroenden om nödvändigt</p>
               <ul>
                 <li><code>npm install</code></li>
               </ul>
-              <p>Bygg projektet:</p>
+              <p>Bygg projektet</p>
               <ul>
                 <li><code>npm run build</code></li>
               </ul>
-              <p>Deploya till GitHub Pages:</p>
+              <p>Deploya till GitHub Pages</p>
               <ul>
                 <li><code>npx gh-pages -d dist</code></li>
               </ul>
-              <p>För Netlify/Vercel:</p>
+              <p>För Netlify/Vercel</p>
               <ul>
                 <li><code>netlify deploy --prod</code></li>
                 <li><code>vercel --prod</code></li>
               </ul>
             </li>
           </ol>
+        </section>
+        <section>
           <h2>Automatisering med Parcel</h2>
           <p>
             Parcel används för att automatisera uppgifter som minifiering,
             transpilering och optimering.
           </p>
 
-          <h2>Minifiering av CSS</h2>
+          <h3>Minifiering av CSS</h3>
           <p>
             Parcel hanterar automatiskt minifiering av CSS i produktionsläge.
           </p>
@@ -269,15 +351,15 @@
             <li><strong>Kommando</strong> <code>npm run build</code></li>
             <li>
               <strong>Utdata</strong> Minifierade CSS-filer sparas i
-              <code>dist/</code>-mappen.
+              <code>dist/</code>-mappen
             </li>
             <li>
               <strong>Fördelar</strong> Snabbare laddningstid och minskad
-              filstorlek.
+              filstorlek
             </li>
           </ul>
 
-          <h2>Transpilering och minifiering av JavaScript</h2>
+          <h3>Transpilering och minifiering av JavaScript</h3>
           <p>
             För att säkerställa kompatibilitet transpileras JavaScript med
             Babel.
@@ -287,43 +369,43 @@
             <li><strong>Kommando</strong> <code>npm run build</code></li>
             <li>
               <strong>Utdata</strong> JavaScript-filer i
-              <code>dist/</code>-mappen, optimerade och ES5-kompatibla.
+              <code>dist/</code>-mappen, optimerade och ES5-kompatibla
             </li>
             <li>
               <strong>Fördelar</strong> Bakåtkompatibilitet och
-              prestandaförbättring.
+              prestandaförbättring
             </li>
           </ul>
-          <h2>Minifiering av HTML</h2>
-          <p>HTML-filer optimeras för att reducera storlek.</p>
+          <h3>Minifiering av HTML</h3>
+          <p>HTML-filer optimeras för att reducera storlek</p>
           <ul>
             <li><strong>Kommando</strong> <code>npm run build</code></li>
             <li>
               <strong>Utdata</strong> Komprimerade HTML-filer i
-              <code>dist/</code>.
+              <code>dist/</code>
             </li>
             <li>
               <strong>Fördelar</strong> Snabbare laddning och mindre
-              bandbreddskonsumtion.
+              bandbreddskonsumtion
             </li>
           </ul>
-          <h2>Optimering av bilder</h2>
-          <p>Optimering skall ske automatiskt vid uppdatering av bilder.</p>
+          <h3>Optimering av bilder</h3>
+          <p>Optimering skall ske automatiskt vid uppdatering av bilder</p>
           <p>
-            Automatisk bildoptimering genom modernare format som WebP och AVIF.
+            Automatisk bildoptimering genom modernare format som WebP och AVIF
           </p>
           <ul>
-            <li><strong>Tillägg</strong> Paket som imagemin kan användas.</li>
+            <li><strong>Tillägg</strong> Paket som imagemin kan användas</li>
             <li><strong>Kommando</strong> <code>npm run build</code></li>
             <li>
               <strong>Utdata</strong> Optimerade bilder i
-              <code>dist/images/</code>.
+              <code>dist/images/</code>
             </li>
             <li>
-              <strong>Fördelar</strong> Minskad filstorlek, snabbare laddning.
+              <strong>Fördelar</strong> Minskad filstorlek, snabbare laddning
             </li>
           </ul>
-          <h2>Bakåtkompabilitet</h2>
+          <h3>Bakåtkompabilitet</h3>
           <ul>
             <li>
               Bakåtkompabilitet i genererade filer, så att exempelvis JavaScript
@@ -342,10 +424,10 @@
             <li>JavaScript transpileras till ES5.</li>
             <li>CSS autoprefixas för äldre webbläsare.</li>
           </ul>
-          <h2>
+          <h3>
             Kopiering av arbetsfiler till mapp för publicering med optimerade
             filer
-          </h2>
+          </h3>
           <p>
             Vid byggprocessen kopieras alla optimerade filer till en
             <code>dist/</code>-mapp för publicering.
@@ -357,7 +439,7 @@
               <code>dist/</code>
             </li>
           </ul>
-          <h2>Kör <code>npm start</code></h2>
+          <h3>Kör <code>npm start</code></h3>
           <p>Startar Parcel i utvecklingsläge.</p>
           <ul>
             <li>
@@ -369,7 +451,7 @@
               http://localhost:1234/).
             </li>
           </ul>
-          <h2>Kör <code>npx serve dist</code></h2>
+          <h3>Kör <code>npx serve dist</code></h3>
           <p>
             Serverar den byggda versionen från <code>dist/</code>, alltså den
             optimerade produktionskoden.
@@ -384,49 +466,224 @@
               väljer).
             </li>
           </ul>
-          <h2>Nästa steg</h2>
+        </section>
+        <section>
+          <h2>Kommande steg</h2>
+          <p>
+            Under den här kursen finns det inte tid, men jag kommer personligen
+            gå vidare med följande steg
+          </p>
+          <h3>Optimera processerna</h3>
+          <p>
+            Se över ytterligare optimeringar som kan effektivisera mitt
+            utvecklingsflöde.
+          </p>
+          <ul>
+            <li>
+              Förbättra mina
+              <a
+                href="https://eslint.org/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                ESLint
+              </a>
+              &
+              <a
+                href="https://prettier.io/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Prettier
+              </a>
+              inställningsfiler, där linting och kodformattering används för
+              konsekvent kodstil.
+            </li>
+            <li>
+              <a
+                href="https://typicode.github.io/husky/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Husky
+              </a>
+              &
+              <a
+                href="https://github.com/okonet/lint-staged"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Lint-staged
+              </a>
+              Automatiserade pre-commit hooks för kvalitetssäkring
+            </li>
+            <li>
+              <a
+                href="https://www.docker.com/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Docker
+              </a>
+              Containerisering av applikationen för enklare hantering i olika
+              miljöer
+            </li>
+            <li>
+              Fortsätta att verifiera grundläggande reset och till exempel
+              <a
+                href="https://necolas.github.io/normalize.css/"
+                rel="noopener noreferrer"
+                target="_blank"
+                >normalize.css</a
+              >
+            </li>
+          </ul>
+          <h3>Utforska alternativa byggverktyg</h3>
+          <p>Testa andra lösningar för att jämföra prestanda och arbetsflöde</p>
+          <ul>
+            <li>
+              <a
+                href="https://webpack.js.org/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Webpack
+              </a>
+              Kraftfull och konfigurerbar bundler
+            </li>
+            <li>
+              <a
+                href="https://vite.dev/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Vite
+              </a>
+              Snabb utvecklingsserver med HMR (Hot Module Replacement)
+            </li>
+            <li>
+              <a
+                href="https://esbuild.github.io/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                esbuild
+              </a>
+              Extremt snabb JavaScript-bundler
+            </li>
+            <li>
+              <a
+                href="https://rollupjs.org/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Rollup
+              </a>
+              Optimerad för små paket och modulär kod
+            </li>
+          </ul>
+          <h3>Optimera boilerplate</h3>
+          <p>
+            Se över och försöka förbättra min grundstruktur genom att använda
+            eller i alla fall analysera andra och färdiga boilerplates
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://html5boilerplate.com/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                HTML5 Boilerplate
+              </a>
+              En snabbstartsmall med best practices
+            </li>
+            <li>
+              <a
+                href="https://github.com/sindresorhus/awesome"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Awesome Boilerplates
+              </a>
+              Samling av olika boilerplates för olika ramverk och verktyg
+            </li>
+          </ul>
           <h3>GitHub Actions YAML-fil</h3>
           <p>
             Genom att skapa en 📜 YAML-fil
             <code>.github/workflows/deploy.yml</code>, kan arbetsflödet
-            automatiseras. Detta blir nästa steg i utvecklingen.
+            automatiseras.
           </p>
 
-          <ul>
+          <ol>
             <li>
-              <strong>Pull Request-jobbet</strong>
-              <ul>
-                <li><code>create_pr</code></li>
-                <li>
-                  När en <code>feature-*</code> branch pushas, skapas en pull
-                  request till <code>dev</code> automatiskt.
-                </li>
-              </ul>
+              <strong>Pull Request</strong>
+              <p>
+                När en <code>feature-*</code> branch pushas, skapas en
+                <code>pull request</code> till <code>dev</code> automatiskt.
+              </p>
             </li>
 
             <li>
-              <strong>Merge-jobbet</strong>
-              <ul>
-                <li><code>merge_dev_to_main</code></li>
-                <li>
-                  När en PR till <code>dev</code> godkänns, slås
-                  <code>dev</code> automatiskt samman med <code>main</code>.
-                </li>
-              </ul>
+              <strong>Merge</strong>
+              <p>
+                När en PR till <code>dev</code> godkänns, slås
+                <code>dev</code> automatiskt samman med <code>main</code>.
+              </p>
             </li>
 
             <li>
-              <strong>Deploy-jobbet</strong>
+              <strong>Deploy</strong>
+              <p>
+                Efter merge till <code>main</code>, installeras beroenden,
+                bygget körs och webbplatsen publiceras automatiskt till<br />
+              </p>
+
               <ul>
-                <li><code>deploy</code></li>
                 <li>
-                  Efter merge till <code>main</code>, installeras beroenden,
-                  bygget körs och webbplatsen publiceras automatiskt (exempelvis
-                  till GitHub Pages).
+                  <a
+                    href="https://parceljs.org/features/development/#parcel-serve"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Parcel Dev Server
+                  </a>
+                  (för lokal utveckling)<br />
+                </li>
+                <li>
+                  <a
+                    href="https://pages.github.com/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    GitHub Pages
+                  </a>
+                  En statisk webbhotellstjänst<br />
+                </li>
+                <li>
+                  <a
+                    href="https://vercel.com/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Vercel
+                  </a>
+                  För dynamiska och statiska applikationer<br />
+                </li>
+                <li>
+                  <a
+                    href="https://www.netlify.com/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Netlify
+                  </a>
+                  För statisk hosting med CI/CD-integration
                 </li>
               </ul>
             </li>
-          </ul>
+          </ol>
         </section>
       </main>
       <footer class="footer">
@@ -438,9 +695,9 @@
         </div>
         <div class="footer-section">
           <h2>Vårt kontor</h2>
-          <p>Adress: Exempelgatan 123</p>
-          <p>Telefon: 0123-456789</p>
-          <p>Email: info@example.com</p>
+          <p><strong>Adress</strong> Exempelgatan 123</p>
+          <p><strong>Telefon</strong> 0123-456789</p>
+          <p><strong>Email</strong> info@example.com</p>
         </div>
         <div class="footer-section">
           <h2>Våra riktlinjer</h2>

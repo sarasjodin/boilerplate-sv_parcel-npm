@@ -25,7 +25,19 @@ h3 {
   padding: 0.4rem 0 0.3rem 0;
 }
 
-ul {
+p {
+  padding: 0.3rem 0 0.3rem 0;
+  line-height: 1.5;
+}
+
+footer p {
+  padding: unset;
+}
+
+ol,
+ul,
+ol p,
+ul p {
   padding: 0.5rem 0 0.5rem 0;
 }
 
@@ -37,11 +49,29 @@ ol li {
 
 /* Mobile-first default styles max-width: 480px */
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   background-color: white;
 }
 
 section {
-  padding: 5% 10%;
+  padding: 5% 10% 0 10%;
+}
+
+section:last-of-type {
+  padding-bottom: 5%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1600px;
+  width: 100%;
+  margin: auto;
+  /* padding: 0 5%; */ /* Lägger till padding så att innehållet inte når kanterna */
 }
 
 /* Tablets */
@@ -66,5 +96,5 @@ section {
 }
 
 /* Max 1600px */
-@media (max-width: 1600px) {
+@media (min-width: 1600px) {
 }
