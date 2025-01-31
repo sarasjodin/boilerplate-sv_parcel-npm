@@ -188,6 +188,7 @@ ul.dropdown-menu.active {
   background: none;
   border: none;
   cursor: pointer;
+  margin-right: 5%;
 }
 
 .hamburger-menu span {

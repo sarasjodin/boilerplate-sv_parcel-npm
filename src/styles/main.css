@@ -10,6 +10,17 @@
   padding: 0;
 }
 
+:root {
+  --primary-color: #0073e6; /* Standard länkfärg */
+  --hover-color: #005bb5; /* Länkfärg vid hover */
+  --active-color: #003f7f; /* Länkfärg vid klick */
+  --text-color-light: #222; /* Textfärg för ljus bakgrund */
+  --text-color-dark: #fff; /* Textfärg för mörk bakgrund */
+  --bg-light: #f5f5f5; /* Ljus bakgrund */
+  --bg-dark: #333; /* Mörk bakgrund */
+  --border-color: #ccc; /* Gränsfärg för stilrena länkar */
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -63,6 +74,27 @@ ul li,
 ol li {
   padding: 0.2rem 0 0.2rem 0;
   margin-left: 2rem;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+a:hover {
+  color: var(--hover-color);
+  border-bottom: 2px solid var(--hover-color);
+}
+
+a:active {
+  color: var(--active-color);
+}
+
+a:focus {
+  outline: 2px dashed var(--hover-color);
+  outline-offset: 3px;
 }
 
 .container {

@@ -105,9 +105,9 @@ body {
 /* Standardbildstorlek (mobil-first) */
 .image-container img {
   width: 100%; /* Tar upp hela bredden av sin container */
-  max-width: 250px; /* Behåller maxbredd */
+  max-width: 500px;
   height: auto; /* Bevarar bildens proportioner */
-  border-radius: 8px; /* Rundade hörn för snyggare stil */
+  border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 /* För skärmar mellan 480px och 1025px (tablets) */
@@ -117,8 +117,7 @@ body {
   }
 
   .image-container img {
-    width: calc(50% - 10px); /* Två bilder per rad */
-    max-width: 300px;
+    max-width: 500px;
   }
 }
 
@@ -129,8 +128,7 @@ body {
   }
 
   .image-container img {
-    width: calc(33.33% - 10px); /* Tre bilder per rad */
-    max-width: 350px;
+    max-width: 500px;
   }
 }
 
@@ -141,8 +139,7 @@ body {
   }
 
   .image-container img {
-    width: calc(25% - 10px); /* Fyra bilder per rad */
-    max-width: 350px; /* Anpassa maxbredd för att säkerställa att de får plats */
+    max-width: 500px;
   }
 }
 
@@ -153,7 +150,6 @@ body {
   }
 
   .image-container img {
-    width: calc(10% - 10px); /* Fem bilder per rad */
-    max-width: 450px;
+    max-width: 500px;
   }
 }

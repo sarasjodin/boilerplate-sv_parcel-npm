@@ -1,6 +1,7 @@
 {
   "name": "boilerplate-sv_parcel-npm",
   "version": "1.0.0",
+  "type": "module",
   "description": "Mitt boilerplate projekt med parcel npm svenska inställningar",
   "source": "src/index.html",
   "scripts": {

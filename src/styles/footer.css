@@ -30,18 +30,18 @@
 
 .social-icon {
   position: relative;
-  width: 24px; /* Anpassa till befintlig storlek */
-  height: 24px; /* Anpassa till befintlig storlek */
+  width: 24px;
+  height: 24px;
 }
 .social-icon .larger {
   position: relative;
-  width: 28px; /* Anpassa till befintlig storlek */
-  height: 28px; /* Anpassa till befintlig storlek */
+  width: 28px;
+  height: 28px;
 }
 .social-icon .largest {
   position: relative;
-  width: 35px; /* Anpassa till befintlig storlek */
-  height: 35px; /* Anpassa till befintlig storlek */
+  width: 35px;
+  height: 35px;
 }
 
 .social-icon img {
@@ -80,14 +80,14 @@
 
 @media (min-width: 700px) and (max-width: 1025px) {
   .footer {
-    grid-template-columns: repeat(3, 1fr); /* 2 kolumner */
+    grid-template-columns: repeat(3, 1fr); /* 3 kolumner */
   }
 }
 
 /* Laptops (min-width: 1025px and max-width: 1440px) */
 @media (min-width: 1025px) and (max-width: 1440px) {
   .footer {
-    grid-template-columns: repeat(4, 1fr); /* 3 kolumner */
+    grid-template-columns: repeat(4, 1fr); /* 4 kolumner */
   }
 }
 
