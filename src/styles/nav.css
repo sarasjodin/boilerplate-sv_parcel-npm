@@ -19,6 +19,7 @@ body {
 .logo-container {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .logo {
@@ -40,8 +41,7 @@ body {
   position: absolute;
   top: 60px; /* Positionera menyn i övre högra hörnet */
   right: 20px; /* Litet mellanrum från högra kanten */
-  width: 70%;
-  text-align: left; /* Justera texten till vänster */
+  width: 100%;
   border-radius: 5px; /* Lägg till en mjukare stil */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Förhöjd stil */
 }
@@ -55,10 +55,12 @@ body {
   padding: 5% 10%;
   display: flex; /* Lägger till flex för horisontell layout */
   flex-direction: column; /* Standard layout för mobiler */
+  align-items: flex-end; /* Högerjusterar menyalternativen */
+  justify-content: center; /* Centrera menyn vertikalt (valfritt) */
 }
 
 .menu-items li {
-  margin: 5% 10%;
+  margin: 5%;
   position: relative;
 }
 
@@ -185,20 +187,12 @@ ul.dropdown-menu.active {
 }
 
 @media (min-width: 480px) and (max-width: 600px) {
-  .nav {
-    width: 50%;
-  }
-
   .company-name {
     display: inline;
   }
 }
 
 @media (min-width: 600px) and (max-width: 1025px) {
-  .nav {
-    width: 40%;
-  }
-
   .company-name {
     display: inline;
   }
@@ -208,8 +202,10 @@ ul.dropdown-menu.active {
   .nav {
     display: flex;
     flex-direction: row; /* Gör menyn horisontell */
-    position: static;
     box-shadow: none;
+    position: relative; /* Ändrad från static till relative */
+    width: 100%;
+    top: 0;
   }
 
   .menu-items {
