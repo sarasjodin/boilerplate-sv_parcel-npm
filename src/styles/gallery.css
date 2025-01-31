@@ -91,3 +91,69 @@ body {
     opacity: 1;
   }
 }
+
+/* Bildcontainer */
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* Mellanrum mellan bilder */
+  max-width: 100%;
+  padding: 40px;
+}
+
+/* Standardbildstorlek (mobil-first) */
+.image-container img {
+  width: 100%; /* Tar upp hela bredden av sin container */
+  max-width: 250px; /* Behåller maxbredd */
+  height: auto; /* Bevarar bildens proportioner */
+  border-radius: 8px; /* Rundade hörn för snyggare stil */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* För skärmar mellan 480px och 1025px (tablets) */
+@media (min-width: 480px) and (max-width: 1025px) {
+  .image-container {
+    justify-content: space-around;
+  }
+
+  .image-container img {
+    width: calc(50% - 10px); /* Två bilder per rad */
+    max-width: 300px;
+  }
+}
+
+/* För skärmar mellan 1025px och 1440px (laptops) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .image-container {
+    justify-content: center;
+  }
+
+  .image-container img {
+    width: calc(33.33% - 10px); /* Tre bilder per rad */
+    max-width: 350px;
+  }
+}
+
+/* För skärmar mellan 1440px och 1600px (stora skärmar) */
+@media (min-width: 1440px) and (max-width: 1600px) {
+  .image-container {
+    justify-content: center;
+  }
+
+  .image-container img {
+    width: calc(25% - 10px); /* Fyra bilder per rad */
+    max-width: 350px; /* Anpassa maxbredd för att säkerställa att de får plats */
+  }
+}
+
+/* För skärmar över 1600px (extra stora skärmar) */
+@media (min-width: 1600px) {
+  .image-container {
+    justify-content: center;
+  }
+
+  .image-container img {
+    width: calc(10% - 10px); /* Fem bilder per rad */
+    max-width: 450px;
+  }
+}

@@ -22,31 +22,4 @@ document.addEventListener("DOMContentLoaded", () => {
         .forEach((dropdown) => dropdown.classList.remove("open")); // Stäng pilar
     }
   });
-
-  // Handle dropdown toggling for all views
-  dropdownToggles.forEach((toggle) => {
-    toggle.addEventListener("click", (event) => {
-      event.preventDefault(); // Prevent link navigation
-      const parentDropdown = toggle.parentNode; // li.dropdown
-      const dropdownMenu = toggle.nextElementSibling;
-
-      if (dropdownMenu) {
-        // Stäng alla andra dropdowns och deras pilar
-        document.querySelectorAll(".dropdown-menu").forEach((menu) => {
-          if (menu !== dropdownMenu) {
-            menu.classList.remove("active");
-          }
-        });
-        document.querySelectorAll(".dropdown").forEach((dropdown) => {
-          if (dropdown !== parentDropdown) {
-            dropdown.classList.remove("open"); // Stäng andra pilar
-          }
-        });
-
-        // Öppna/stäng den valda dropdownen
-        dropdownMenu.classList.toggle("active");
-        parentDropdown.classList.toggle("open"); // Uppdatera pilens klass
-      }
-    });
-  });
 });

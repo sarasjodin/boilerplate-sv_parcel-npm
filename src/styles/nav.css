@@ -25,7 +25,7 @@ body {
 .logo {
   height: 50px;
   width: 200px;
-  margin-right: 10%;
+  margin: 0 10% 0 8%;
 }
 
 .company-name {
@@ -48,6 +48,10 @@ body {
 
 .nav.active {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Gör att menyn håller sig vänsterjusterad */
+  width: 30%;
+  max-width: 100%;
 }
 
 .menu-items {
@@ -55,7 +59,7 @@ body {
   padding: 5% 10%;
   display: flex; /* Lägger till flex för horisontell layout */
   flex-direction: column; /* Standard layout för mobiler */
-  align-items: flex-end; /* Högerjusterar menyalternativen */
+  align-items: flex-start; /* Högerjusterar menyalternativen */
   justify-content: center; /* Centrera menyn vertikalt (valfritt) */
 }
 
@@ -73,9 +77,15 @@ body {
   transition: background-color 0.3s;
 }
 
+.menu-items .dropdown {
+  position: relative; /* Gör att dropdown följer sin förälder */
+  width: 100%;
+}
+
 .menu-items > li:nth-child(1) a,
 .menu-items > li:nth-child(2) a,
-.menu-items > li:nth-child(3) a {
+.menu-items > li:nth-child(3) a,
+.menu-items > li:nth-child(4) a {
   text-decoration: none;
   color: white;
   font-size: 16px;
@@ -100,13 +110,13 @@ body {
 }
 /* Grundinställning för dropdown-menyn */
 ul.dropdown-menu {
-  width: 150%; /* Se till att menyn alltid har denna bredd */
+  /* width: 150%; */ /* Se till att menyn alltid har denna bredd */
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease, width 0.3s ease;
-  position: absolute;
-  top: 100%; /* Placera den precis under huvudmenyalternativet */
-  left: 0;
+  position: relative; /* Ta bort absolute för att hålla den inne i huvudmenyn */
+  width: 100%; /* Gör att dropdown får samma bredd som huvudmenyn */
+  display: none;
 }
 
 /* När dropdown-menyn är aktiv (öppen) */
@@ -190,11 +200,27 @@ ul.dropdown-menu.active {
   .company-name {
     display: inline;
   }
+  .menu-items {
+    list-style: none;
+    padding: 5% 10%;
+    display: flex; /* Lägger till flex för horisontell layout */
+    flex-direction: column; /* Standard layout för mobiler */
+    align-items: flex-end; /* Högerjusterar menyalternativen */
+    justify-content: center; /* Centrera menyn vertikalt (valfritt) */
+  }
 }
 
 @media (min-width: 600px) and (max-width: 1025px) {
   .company-name {
     display: inline;
+  }
+  .menu-items {
+    list-style: none;
+    padding: 5% 10%;
+    display: flex; /* Lägger till flex för horisontell layout */
+    flex-direction: column; /* Standard layout för mobiler */
+    align-items: flex-end; /* Högerjusterar menyalternativen */
+    justify-content: center; /* Centrera menyn vertikalt (valfritt) */
   }
 }
 
@@ -206,23 +232,37 @@ ul.dropdown-menu.active {
     position: relative; /* Ändrad från static till relative */
     width: 100%;
     top: 0;
+    max-height: 119px;
+  }
+
+  .nav.active {
+    width: 100%;
   }
 
   .menu-items {
-    flex-direction: row; /* Gör länkar horisontella */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .menu-items .dropdown {
+    position: relative;
   }
 
   .dropdown-menu {
     position: absolute;
-    top: 100%;
+    top: 100%; /* Flytta ner dropdownmenyn precis under huvudmenyn */
     left: 0;
+    width: 200px; /* Fast bredd */
+    background-color: #444;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Se till att den ligger ovanpå andra element */
   }
 
-  .menu-items .dropdown-menu {
-    background-color: rgb(68, 68, 68);
-    z-index: 1000;
-    border-radius: 8px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  /* Visa dropdown på hover i desktop */
+  .dropdown:hover .dropdown-menu {
+    display: block;
   }
 
   .company-name {
@@ -241,10 +281,20 @@ ul.dropdown-menu.active {
     flex-direction: row; /* Gör menyn horisontell */
     position: static;
     box-shadow: none;
+    max-height: 135px;
+  }
+
+  .nav.active {
+    width: 100%;
   }
 
   .menu-items {
+    list-style: none;
+    padding: 5% 10%;
+    display: flex; /* Lägger till flex för horisontell layout */
     flex-direction: row; /* Gör länkar horisontella */
+    align-items: flex-start; /* Högerjusterar menyalternativen */
+    justify-content: center; /* Centrera menyn vertikalt (valfritt) */
   }
 
   .dropdown-menu {
@@ -276,10 +326,20 @@ ul.dropdown-menu.active {
     flex-direction: row; /* Gör menyn horisontell */
     position: static;
     box-shadow: none;
+    max-height: 135px;
+  }
+
+  .nav.active {
+    width: 100%;
   }
 
   .menu-items {
+    list-style: none;
+    padding: 5% 10%;
+    display: flex; /* Lägger till flex för horisontell layout */
     flex-direction: row; /* Gör länkar horisontella */
+    align-items: flex-start; /* Högerjusterar menyalternativen */
+    justify-content: center; /* Centrera menyn vertikalt (valfritt) */
   }
 
   .dropdown-menu {
