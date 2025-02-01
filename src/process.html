@@ -395,18 +395,18 @@
             <li>
               <strong
                 >När utvecklingen är stabil, slå samman dev till main och
-                publicera automatiskt</strong
+                publicera</strong
               >
               <p>
                 När alla funktioner är testade, vill vi slå samman (merge) dev
-                till main och publicera de färdiga ändringarna live.
+                till main och publicera automatiskt de färdiga ändringarna live.
               </p>
               <ul>
                 <li>
                   <code>gh pr merge --merge</code>
-                  <code>git checkout main</code>
-                  <code>git pull origin main</code>
                 </li>
+                <li><code>git checkout main</code></li>
+                <li><code>git pull origin main</code></li>
               </ul>
               <p>Pusha till main</p>
               <ul>
