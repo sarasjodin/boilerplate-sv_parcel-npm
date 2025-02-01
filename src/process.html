@@ -408,16 +408,6 @@
                   <code>git pull origin main</code>
                 </li>
               </ul>
-              <p>Slå samman dev till main</p>
-              <ul>
-                <li>
-                  <code
-                    >git merge dev --no-ff -m "Slår samman dev till main efter
-                    godkänd PR"</code
-                  >
-                </li>
-              </ul>
-
               <p>Pusha till main</p>
               <ul>
                 <li><code>git push origin main</code></li>
@@ -428,33 +418,12 @@
                 byggfiler från versionshanteringen.
               </p>
             </li>
-
             <li>
-              <strong>Kör bygg- och deploy-process efter merge</strong>
-              <p>Hämta senaste ändringar i main</p>
-              <ul>
-                <li><code>git pull origin main</code></li>
-              </ul>
-              <p>Installera beroenden om nödvändigt</p>
-              <ul>
-                <li><code>npm install</code></li>
-              </ul>
-              <p>Bygg projektet</p>
-              <ul>
-                <li><code>npm run build</code></li>
-              </ul>
-              <p>Deploya till GitHub Pages</p>
-              <ul>
-                <li><code>npx gh-pages -d dist</code></li>
-              </ul>
-              <p>För Netlify/Vercel</p>
-              <ul>
-                <li>
-                  För Netlify har jag skapat en netlify.toml-fil som hjälper
-                  till med inställningarna för deply-funktionaliteten. >
-                </li>
-                <li><code>vercel --prod</code></li>
-              </ul>
+              <strong>Netlify Build</strong>
+              <p>
+                För Netlify har jag skapat en netlify.toml-fil som hjälper till
+                med inställningarna för deply-funktionen. >
+              </p>
             </li>
           </ol>
         </section>
