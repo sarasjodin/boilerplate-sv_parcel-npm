@@ -401,10 +401,11 @@
                 När alla funktioner är testade, vill vi slå samman (merge) dev
                 till main och publicera de färdiga ändringarna live.
               </p>
-              <p>Hämta senaste ändringar från main</p>
               <ul>
                 <li>
-                  <code>git checkout main && git pull origin main</code>
+                  <code>gh pr merge --merge</code>
+                  <code>git checkout main</code>
+                  <code>git pull origin main</code>
                 </li>
               </ul>
               <p>Slå samman dev till main</p>
