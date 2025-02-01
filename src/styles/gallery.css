@@ -12,12 +12,15 @@ body {
   grid-gap: 10px;
   width: 100%;
   max-width: 1600px;
+  z-index: 0;
+  position: relative;
 }
 
 /* Styla varje bild */
 .gallery-item {
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .gallery-item img {
@@ -100,6 +103,8 @@ body {
   gap: 10px; /* Mellanrum mellan bilder */
   max-width: 100%;
   padding: 40px;
+  z-index: 1;
+  position: relative;
 }
 
 /* Standardbildstorlek (mobil-first) */
