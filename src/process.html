@@ -129,13 +129,11 @@
               <strong> Main branch</strong> Den stabila produktionsversionen av
               webbplatsen
             </li>
+            <li><strong>Feature branches</strong> För specifika funktioner.</li>
             <li>
-              <strong>Dev branch</strong> Här sker aktiv utveckling innan
-              förändringar slås samman till main.
-            </li>
-            <li>
-              <strong>Feature branches</strong> För specifika funktioner,
-              exempelvis feature-image-optimization.
+              <strong>Dev branch</strong> För ett större projekt där aktiv
+              utveckling måste ske innan förändringar kan slås samman till main,
+              är det bra att också använda en Dev branch.
             </li>
           </ul>
         </section>
@@ -243,23 +241,23 @@
                 │   (tillagd i .gitignore)
                 ├── 📂node_modules
                 │   (tillagd i .gitignore)
-                ├── 📂src
-                │   ├── 📂images
-                │   ├── 📂scripts
-                │   ├── 📂styles
-                │   ├── 📂videos
-                │   ├── 📜gallery.html
-                │   ├── 📜index.html
-                │   ├── 📜process.html
-                │   ├── 🔑.env
-                │   │   (tillagd i .gitignore)
-                │   ├── 🔑.env.example
-                │   ├── 🔄.gitignore
-                │   ├── 🗒 convert-to-webp.js
-                │   ├── 🗒 netlify.toml
-                │   ├── 🔄package-lock.json
-                │   ├── 🔄package.json
-                │   ├── 📄readme.md
+                └── 📂src
+                    ├── 📂images
+                    ├── 📂scripts
+                    ├── 📂styles
+                    ├── 📂videos
+                    ├── 📜gallery.html
+                    ├── 📜index.html
+                    ├── 📜process.html
+                    ├── 🔑.env
+                    │   (tillagd i .gitignore)
+                    ├── 🔑.env.example
+                    ├── 🔄.gitignore
+                    ├── 🗒 convert-to-webp.js
+                    ├── 🗒 netlify.toml
+                    ├── 🔄package-lock.json
+                    ├── 🔄package.json
+                    └── 📄readme.md
             </code>
             </pre>
           <h3 id="arbetsflode">Arbetsflöde</h3>
@@ -269,20 +267,48 @@
             zero-config bundler, vilket betyder att du kan börja direkt utan att
             behöva konfigurera något.
           </p>
+          <p>Jag har delat in följande instruktion i tre delar</p>
+          <ol>
+            <li>Privat utvecklingsmiljö | Setup & kodning</li>
+            <li>Arbete i projekt | Versionshantering & automation</li>
+            <li>Testning & optimering inför release</li>
+          </ol>
+          <h3>Privat utvecklingsmiljö | Setup & kodning</h3>
           <ol>
             <li>
               <strong>Klona repot</strong>
               <ul>
                 <li>
-                  <p>
-                    När du skapar ett nytt projekt baserat på en boilerplate,
-                    behöver du klona repot från GitHub (eller en annan
-                    versionshanteringstjänst) för att få en kopia av den
-                    befintliga kodbasen.
-                  </p>
+                  När du skapar ett nytt projekt baserat på en boilerplate,
+                  behöver du klona repot från GitHub (eller en annan
+                  versionshanteringstjänst) för att få en kopia av den
+                  befintliga kodbasen. <br />
+                  <code>git clone &lt;repo-url&gt;</code>
                 </li>
-                <li><code>git clone &lt;repo-url&gt;</code></li>
-                <li><code>cd &lt;repo-namn&gt;</code></li>
+                <li>
+                  Om du vill till exempel kolla statusen för ett repo måste du
+                  placera dig i den. <br />
+                  <code>cd &lt;repo-namn&gt;</code>
+                </li>
+                <li>För att kolla status <br /><code>git status</code></li>
+                <li>
+                  Om du redan har skapat en ny projektmapp och vill placera det
+                  klonade repositoryt där<br />
+                  <code
+                    >git clone --depth=1 &lt;github-länk till Parcel
+                    repository&gt; .</code
+                  ><br />
+                  Den avslutande punkten ovan är viktig, den väljer att endast
+                  kopiera mapparna och filerna från klonen och inte den
+                  övergripande boilerplate mappen.
+                </li>
+                <li>
+                  Eller om du vill klona och skapa en ny mapp samtidigt<br />
+                  <code
+                    >git clone &lt;github-länk till Parcel boilerplate
+                    repository&gt; &lt;nytt projektnamn&gt;</code
+                  >
+                </li>
               </ul>
             </li>
 
@@ -290,13 +316,36 @@
               <strong>Skapa en ny branch</strong>
               <ul>
                 <li>
-                  <p>
-                    När du jobbar i ett Git-projekt är det viktigt att skapa en
-                    ny branch för att separera din utveckling från den stabila
-                    koden.
-                  </p>
+                  När du jobbar i ett Git-projekt är det viktigt att skapa en ny
+                  branch för att separera din utveckling från den stabila koden.
                 </li>
-                <li><code>git checkout -b feature-newpage</code></li>
+                <li>
+                  Innan man skapar en ny branch kan det vara bra att först
+                  kontrollera att den lokala branchen har den senaste versionen
+                  av main-branchen <br />
+                  <code>git checkout main</code><br /><code
+                    >git pull origin main</code
+                  >
+                </li>
+                <li>Nu är du redo att skapa en ny branch!</li>
+                <li>
+                  Här skapar du en ny branch och byter till den branchen direkt
+                  <br />
+                  <code>git checkout -b feature-newpage</code>
+                </li>
+                <li>
+                  Eller om du redan har en branch sedan tidigare, som du vill
+                  fortsätta att jobba i. Det vill säga om branchen redan finns,
+                  flytta dig till den branchen<br />
+                  <code>git checkout &lt;branchnamn&gt;</code>
+                </li>
+                <li>
+                  Om du inte är säker på vad du har för brancher, kör följande
+                  kommando <br />
+                  <code>git branch</code><br />
+                  Branchen som är angiven med en asterix är den aktuella
+                  branchen du står i.
+                </li>
               </ul>
             </li>
 
@@ -336,32 +385,99 @@
                 </li>
               </ul>
             </li>
-
+          </ol>
+          <h3>Arbete i projekt | Versionshantering & automation</h3>
+          <p>
+            Nästa steg i arbetsflödet är att göra en Pull Request. När bör du
+            göra en Pull Request? Även om du är ensam i projektet kan Pull
+            Requests vara användbara om du vill
+          </p>
+          <ul>
+            <li>Se ändringarna visuellt på GitHub innan du mergar</li>
+            <li>Hålla en tydlig historik över varje ändring</li>
+            <li>Undvika att oavsiktligt förstöra main med en dålig merge</li>
+          </ul>
+          <p>
+            Men om du vill ha ett snabbt workflow, så är direkt merge via
+            terminalen acceptabelt när du jobbar ensam.<br />
+          </p>
+          <h4>Merge utan en Pull Request</h4>
+          <ul>
             <li>
-              <strong
-                >Skapa en pull request och granska innan merge till dev</strong
+              Nu måste du byta till den branch du vill merga till (dev eller
+              main). Här följer exempel till main <br /><code
+                >git checkout main</code
               >
-              <ul>
-                <li>
-                  <p>
-                    När du har pushat dina ändringar till GitHub, behöver du
-                    skapa en Pull Request (PR) för att be om att få dina
-                    ändringar granskade och sammanslagna (merged) till
-                    dev-branchen.
-                  </p>
-                </li>
-              </ul>
-              <p>Skapa en PR via terminalen (GitHub CLI krävs)</p>
-              <ul>
-                <li>
-                  <code
-                    >gh pr create --base dev --head feature-newpage --title
-                    "Lagt till ny undersida" --body "Denna PR lägger till en ny
-                    undersida."</code
-                  >
-                </li>
-              </ul>
             </li>
+            <li>
+              <code>git pull origin main</code><br />Hämtar senaste ändringarna
+              från GitHub
+            </li>
+            <li>
+              <code>git merge &lt;branchnamn&gt;</code><br />
+              Om det inte finns några konflikter mergas de två brancherna till
+              main.
+            </li>
+            <li>
+              Om du vill ta bort arbetsbranchen lokalt<br /><code
+                >git branch -d &lt;branchnamn&gt;
+              </code>
+            </li>
+            <li>
+              Om du vill ta bort arbetsbranchen från GitHub<br />
+              <code>git push origin --delete &lt;branchnamn&gt;</code>
+            </li>
+          </ul>
+          <h4>Skapa och hantera en Pull Request (PR) via terminalen*</h4>
+          <p>
+            När du har pushat dina ändringar till GitHub, behöver du skapa en
+            Pull Request (PR) för att be om att få dina ändringar granskade och
+            sammanslagna (merged) till dev- eller main-branch.
+          </p>
+          <ul>
+            <li>
+              <code
+                >gh pr create --base dev --head feature-newpage --title "Lagt
+                till ny undersida" --body "Denna PR lägger till en ny
+                undersida."</code
+              >
+            </li>
+          </ul>
+          <p>* För att skapa en PR via terminalen krävs GitHub CLI</p>
+          <h4>Skapa och hantera en Pull Request (PR) via GitHub</h4>
+          <p>
+            Skapa en pull request och granska innan merge till dev- eller
+            main-branch
+          </p>
+          <ol>
+            <li>Se till att branchen är pushad till GitHub</li>
+            <li>
+              Om du har jobbat på en ny branch &lt;branchnamn&gt;, se till att
+              du har pushat den
+              <br /><code>git push origin &lt;branchnamn&gt;</code><br />Om du
+              inte redan har gjort det, kommer detta att skapa branchen på
+              GitHub.
+            </li>
+            <li>Gå till GitHub och öppna Pull Requests</li>
+            <li>Välj "New pull request"</li>
+            <li>
+              Validera och testa ändringarna som utförts genom att jämföra
+              brancherna. <br />Create pull request, om allt ser
+              tillfredsställande ut.
+            </li>
+            <li>Skriv en tydlig beskrivning vad som förändrats.</li>
+            <li>Create pull request</li>
+            <li>
+              GitHub kommer nu att visa din Pull Request. Här kan du jämföra
+              ändringarna genom att gå igenom kodförändringarna och kommentera
+              om det behövs.
+            </li>
+            <li>När du är nöjd, klicka på "Merge pull request".</li>
+            <li>Bekräfta genom att klicka på "Confirm merge".</li>
+          </ol>
+          <p>GitHub meddelar nu att PR:n är mergead!</p>
+          <h3>Testning & optimering inför release</h3>
+          <ol>
             <li>
               <strong>Testa utvecklingen</strong>
               <p>
@@ -422,7 +538,7 @@
               <strong>Netlify Build</strong>
               <p>
                 För Netlify har jag skapat en netlify.toml-fil som hjälper till
-                med inställningarna för deply-funktionen. >
+                med inställningarna för deply-funktionen.
               </p>
             </li>
           </ol>
